@@ -2,6 +2,7 @@ package com.coffeemetalcode.calcengine;
 
 import java.time.LocalDate;
 import java.util.Scanner;
+import static com.coffeemetalcode.calcengine.MathEquation.*;
 
 public class Main {
 
@@ -21,5 +22,22 @@ public class Main {
             equation.execute();
             System.out.println("result = " + equation.getResult());
         }
+
+        System.out.println("average of results = " + getAverageResult());
+
+        System.out.print("\nUsing execute overloads\n\n");
+
+        MathEquation equationOverload = new MathEquation('d');
+        double leftDouble = 9.0d;
+        double rightDouble = 4.0d;
+
+        equationOverload.execute(leftDouble, rightDouble);
+        System.out.println("Overload result with doubles " + equationOverload.getResult());
+
+        int leftInt = 9;
+        int rightInt = 4;
+
+        equationOverload.execute(leftInt, rightInt);
+        System.out.println("Overload result with ints " + equationOverload.getResult());
     }
 }
